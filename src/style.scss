@@ -1,0 +1,81 @@
+
+// Variables
+$main-color: #1f2039;
+$title-color: #a5b4fc;
+$dark-purple: #1d0221;
+
+// Mixins
+@mixin title-shadow {
+  text-shadow: .50rem .50rem mix($title-color,$dark-purple, 40%);
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1em;
+  background-color: $main-color;
+}
+
+header {
+  background-color: white;
+  padding: 20px 50px;
+}
+
+/* Section introduction */
+.intro {
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  align-items: flex-start;
+  margin: auto;
+  padding: 80px;
+
+  // Le cours concerne cette partie du code
+  .intro__title {
+    margin-bottom: 15px;
+    font-size: 3.5em;
+    color: $title-color;
+    font-family: 'Montserrat', sans-serif;
+
+    @include title-shadow;
+  }
+
+  .intro__content {
+    font-size: 1.1em;
+    color: #f9f8ff;
+  
+    &--color {
+      color: $title-color;
+      font-style: normal;
+    }
+  }
+  
+  .intro__image {
+    margin-left: 80px;
+  }
+}
+
+/* Barre de navigation */
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  //Responsive pour les liens de navigation
+  @media  screen and (max-width:500px){
+    flex-direction: column;
+    .navbar__logo{
+      display: none;
+     
+}
+  }
+      
+  
+      .navbar__link {
+        margin-left: 30px;
+         color: #242424;
+         text-decoration: none;
+            &--color {
+            color: $title-color;
+             }
+  }
+}
